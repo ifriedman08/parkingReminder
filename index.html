@@ -12,48 +12,33 @@
   </body>
   <script type="text/javascript">
     var date = new Date();
-    // var date = new Date('3/5/2016');
-    // var now = currentDate.getTime();
+
     $('.dateDiv').text(date.toDateString());
 
-    // console.log(date.getDay());
-    console.log('is it a Tues? => ' + (date.getDay() == 2).toString());
-    console.log('is it a Wed? => ' + (date.getDay() == 3).toString());
-    console.log('the second? => ' + (date.getDate() > 7 && date.getDate() <= 14));
+    // console.log('is it a Tues? => ' + (date.getDay() == 2).toString());
+    // console.log('is it a Wed? => ' + (date.getDay() == 3).toString());
+    // console.log('the second? => ' + (date.getDate() > 7 && date.getDate() <= 14));
 
     if ((date.getDay() == 2 || date.getDay() == 3 ) && date.getDate() > 7 && date.getDate() <= 14 ) {
-      console.log('bad!');
-      $('.statusDiv').css({
+      $('body').css({
         'background-color': 'red',
         'color' : 'white'
       })
       $('.statusDiv').text('Bad day.')
     } else if ((date.getDay() == 1 || date.getDay() == 0 ) && date.getDate() > 5 && date.getDate() <= 12 ) {
-      console.log('bad!');
-      $('.statusDiv').css({'background-color': 'yellow'})
+      $('body').css({'background-color': 'yellow'})
       $('.statusDiv').text('Bad week.')
     } else {
-      $('.statusDiv').css({'background-color': 'lime'})
+      $('body').css({'background-color': 'lime'})
       $('.statusDiv').text('You good.')
     }
-    // var tomorrow = currentDate.setDate(currentDate.getDate() + 1);
-    // tomorrow = new Date(tomorrow);
-    //
-    //
-    //
-    //
-    //
-    // if (isDateBad(currentDate)) {
-    //   $('.statusDiv').css({'background-color': 'red'})
-    //   $('.statusDiv').text('Bad day.')
-    // } else if (isDateBad(tomorrow)) {
-    //   $('.statusDiv').css({'background-color': 'yellow'})
-    //   $('.statusDiv').text('Tomorrow is a bad day.')
-    // } else {
-    //   $('.statusDiv').css({'background-color': 'lime'})
-    //   $('.statusDiv').text('You good.')
-    // }
+
+    $('body').css({
+      'font-family' : 'verdana',
+      'font-size': '300%',
+      'text-align': 'center',
+      'padding-top' : '5%'
+    })
 
   </script>
 </html>
-
