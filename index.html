@@ -3,8 +3,56 @@
   <head>
     <meta charset="utf-8">
     <title>Parking Alert</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   </head>
   <body>
-    <h1>Yo yo yo</h1>
+      <h1>Parking Status</h1>
+      <div class="dateDiv"> </div>
+      <div class="statusDiv"> </div>
   </body>
+  <script type="text/javascript">
+    var date = new Date();
+    // var date = new Date('3/5/2016');
+    // var now = currentDate.getTime();
+    $('.dateDiv').text(date.toDateString());
+
+    // console.log(date.getDay());
+    console.log('is it a Tues? => ' + (date.getDay() == 2).toString());
+    console.log('is it a Wed? => ' + (date.getDay() == 3).toString());
+    console.log('the second? => ' + (date.getDate() > 7 && date.getDate() <= 14));
+
+    if ((date.getDay() == 2 || date.getDay() == 3 ) && date.getDate() > 7 && date.getDate() <= 14 ) {
+      console.log('bad!');
+      $('.statusDiv').css({
+        'background-color': 'red',
+        'color' : 'white'
+      })
+      $('.statusDiv').text('Bad day.')
+    } else if ((date.getDay() == 1 || date.getDay() == 0 ) && date.getDate() > 5 && date.getDate() <= 12 ) {
+      console.log('bad!');
+      $('.statusDiv').css({'background-color': 'yellow'})
+      $('.statusDiv').text('Bad week.')
+    } else {
+      $('.statusDiv').css({'background-color': 'lime'})
+      $('.statusDiv').text('You good.')
+    }
+    // var tomorrow = currentDate.setDate(currentDate.getDate() + 1);
+    // tomorrow = new Date(tomorrow);
+    //
+    //
+    //
+    //
+    //
+    // if (isDateBad(currentDate)) {
+    //   $('.statusDiv').css({'background-color': 'red'})
+    //   $('.statusDiv').text('Bad day.')
+    // } else if (isDateBad(tomorrow)) {
+    //   $('.statusDiv').css({'background-color': 'yellow'})
+    //   $('.statusDiv').text('Tomorrow is a bad day.')
+    // } else {
+    //   $('.statusDiv').css({'background-color': 'lime'})
+    //   $('.statusDiv').text('You good.')
+    // }
+
+  </script>
 </html>
